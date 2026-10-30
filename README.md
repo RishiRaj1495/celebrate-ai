@@ -13,12 +13,6 @@ npm test
 
 Without `GEMINI_API_KEY` the app still works (deterministic plan, no ideas section).
 
-## Deploy to Google Cloud Run
-
-```bash
-gcloud run deploy celebrate-ai --source . --region asia-south1 \
-  --allow-unauthenticated --set-env-vars GEMINI_API_KEY=YOUR_KEY
-```
 
 ## Structure
 
