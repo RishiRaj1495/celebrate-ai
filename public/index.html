@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celebrate AI – Event Planner</title>
+  <meta name="description" content="GenAI planner for weddings, birthdays and community events.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#results">Skip to results</a>
+  <header>
+    <h1>Celebrate AI</h1>
+    <p>Budget, timeline, vendor checklist and personalised ideas for your event.</p>
+  </header>
+  <main>
+    <form id="plan-form" novalidate>
+      <div class="field">
+        <label for="eventType">Event type</label>
+        <select id="eventType" name="eventType" required>
+          <option value="wedding">Wedding</option>
+          <option value="birthday">Birthday</option>
+          <option value="community">Community event</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="budget">Total budget (INR)</label>
+        <input id="budget" name="budget" type="number" min="1000" step="1" required inputmode="numeric" value="500000">
+      </div>
+      <div class="field">
+        <label for="guests">Number of guests</label>
+        <input id="guests" name="guests" type="number" min="1" max="5000" step="1" required inputmode="numeric" value="150">
+      </div>
+      <div class="field">
+        <label for="eventDate">Event date</label>
+        <input id="eventDate" name="eventDate" type="date" required>
+      </div>
+      <div class="field">
+        <label for="city">City <span class="hint">(optional)</span></label>
+        <input id="city" name="city" type="text" maxlength="80" autocomplete="address-level2">
+      </div>
+      <div class="field wide">
+        <label for="preferences">Preferences <span class="hint">(optional: style, cuisine, themes, constraints)</span></label>
+        <textarea id="preferences" name="preferences" rows="3" maxlength="500"></textarea>
+      </div>
+      <button type="submit" id="submit">Plan my event</button>
+    </form>
+
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="errors" role="alert"></div>
+    <section id="results" tabindex="-1" aria-label="Your event plan" hidden></section>
+  </main>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
